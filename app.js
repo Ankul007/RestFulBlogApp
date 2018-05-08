@@ -108,7 +108,7 @@ app.put("/blogs/:id",function(req,res){
     Blog.findByIdAndUpdate(req.params.id, req.body.blog, function(err, updated){
         if(err)
         {
-            alert("cannot update yoour request");
+            console.log(err);
         }
         else{
             res.redirect("/blogs/"+ req.params.id);
@@ -120,7 +120,7 @@ app.put("/blogs/:id",function(req,res){
 app.delete("/blogs/:id",function(req, res){
     Blog.findByIdAndRemove(req.params.id, req.body.blog, function (err, updated) {
         if (err) {
-            alert("cannot update your request");
+            console.log(err);
         }
         else {
             res.redirect("/blogs");
